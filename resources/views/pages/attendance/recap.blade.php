@@ -16,6 +16,7 @@
             <div class="mb-6 border-b pb-4 border-gray-200 dark:border-gray-600">
                 <h2 class="text-lg font-semibold text-gray-800 mb-3 dark:text-gray-100">Filter Presensi</h2>
                 <form class="flex flex-wrap items-center gap-4">
+                    
                     {{-- Perbaikan: Tambahkan dark:bg-gray-800 dan dark:text-white pada elemen input/select --}}
                     <select class="rounded-md border-gray-300 shadow-sm sm:text-sm p-2 w-full md:w-auto dark:bg-gray-800 dark:border-gray-600 dark:text-white">
                         <option value="">Pilih Bulan</option>
