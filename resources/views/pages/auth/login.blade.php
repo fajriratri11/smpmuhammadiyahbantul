@@ -19,12 +19,12 @@
                 {{-- Logo/Header Aplikasi --}}
                 <div class="mb-6 flex items-center justify-center">
                     <h1 class="text-2xl font-semibold dark:text-[#EDEDEC]">
-                        Masuk ke Aplikasi
+                        SMP MUHAMMADIYAH BANTUL
                     </h1>
                 </div>
 
                 <div class="p-6 lg:p-8 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-xl rounded-lg border border-[#e3e3e0] dark:border-[#3E3E3A]">
-                    <h2 class="mb-6 font-medium text-lg text-center">Login Bimbingan Konseling</h2>
+                    <h2 class="mb-6 font-medium text-lg text-center">Login</h2>
                     
                     {{-- PERBAIKAN: Menggunakan method="GET" dan action diarahkan ke Dashboard --}}
                     <form action="{{ route('dashboard.index') }}" method="GET" class="space-y-6">

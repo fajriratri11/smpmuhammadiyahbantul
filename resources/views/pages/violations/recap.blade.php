@@ -36,10 +36,6 @@
                     <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400">Total Pelanggaran</p>
                     <p class="text-3xl font-bold text-gray-900 dark:text-white">125</p>
                 </div>
-                <div class="bg-red-50 p-5 rounded-lg shadow-md dark:bg-gray-800">
-                    <p class="text-sm font-medium text-red-600 dark:text-red-400">Poin Pelanggaran Tertinggi</p>
-                    <p class="text-2xl font-semibold text-gray-900 dark:text-white">150 Poin</p>
-                </div>
                 <div class="bg-green-50 p-5 rounded-lg shadow-md dark:bg-gray-800">
                     <p class="text-sm font-medium text-green-600 dark:text-green-400">Siswa Tanpa Pelanggaran</p>
                     <p class="text-3xl font-bold text-gray-900 dark:text-white">85%</p>
@@ -56,7 +52,6 @@
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">NIS Siswa</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">Nama Siswa</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">Jenis Pelanggaran</th>
-                            <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">Poin</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">Deskripsi</th>
                             <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-400">Pelapor</th>
                         </tr>
@@ -69,7 +64,6 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100">Sedang</span>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-red-600 dark:text-red-400 text-center">15</td>
                             <td class="px-6 py-4 text-sm text-gray-500 max-w-xs truncate dark:text-gray-300">Terlambat masuk sekolah 30 menit tanpa alasan.</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Ibu Sari</td>
                         </tr>
@@ -80,7 +74,7 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-100">Ringan</span>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-yellow-600 dark:text-yellow-400 text-center">5</td>
+                            
                             <td class="px-6 py-4 text-sm text-gray-500 max-w-xs truncate dark:text-gray-300">Tidak membawa buku pelajaran saat jam mata pelajaran.</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">Pak Joni</td>
                         </tr>

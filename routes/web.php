@@ -8,13 +8,19 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-// 1. ROUTE UTAMA / DASHBOARD
-Route::name('dashboard.index')->get('/', function () {
+// 1. LANDING PAGE (DEFAULT) - DIARAHKAN KE LOGIN
+// Semua akses ke / akan melihat halaman Login.
+Route::get('/', function () {
+    return redirect()->route('auth.login');
+});
+
+// 2. ROUTE DASHBOARD (PAGES) - Rute yang seharusnya diakses setelah login
+Route::name('dashboard.index')->get('/dashboard', function () {
     return view('pages.attendance.recap'); 
 });
 
 
-// 2. KELOMPOK ROUTE MANAJEMEN PRESENSI
+// 3. KELOMPOK ROUTE MANAJEMEN PRESENSI
 Route::prefix('attendance')->name('attendance.')->group(function () {
     Route::get('/record', function () {
         return view('pages.attendance.record');
@@ -25,7 +31,7 @@ Route::prefix('attendance')->name('attendance.')->group(function () {
     })->name('recap'); 
 });
 
-// 3. KELOMPOK ROUTE MANAJEMEN PELANGGARAN
+// 4. KELOMPOK ROUTE MANAJEMEN PELANGGARAN
 Route::prefix('violations')->name('violations.')->group(function () {
     Route::get('/record', function () {
         return view('pages.violations.record');
@@ -36,21 +42,25 @@ Route::prefix('violations')->name('violations.')->group(function () {
     })->name('recap');  
 });
 
-// 4. KELOMPOK ROUTE OTENTIKASI
+// 5. KELOMPOK ROUTE OTENTIKASI
 Route::name('auth.')->group(function () {
-    // Halaman Login (GET)
+    // Halaman Login (Tujuan utama saat / diakses)
     Route::get('/login', function () {
         return view('pages.auth.login');
     })->name('login');
 
-    // Halaman Lupa Password (GET)
+    // Halaman Lupa Password (Meminta Email)
     Route::get('/forgot-password', function () {
         return view('pages.auth.forgot-password');
     })->name('password.request');
+    
+    // Halaman Reset Password (Ganti Password, diakses via 'email link')
+    Route::get('/reset-password', function () {
+        return view('pages.auth.reset-password');
+    })->name('password.reset');
 
-    // PERBAIKAN: Route POST Logout DUMMY untuk simulasi sign out dan mencegah error
+    // Route POST Logout DUMMY
     Route::post('/logout', function () {
-        // Hanya melakukan redirect ke halaman login
         return redirect()->route('auth.login');
     })->name('logout');
 });
