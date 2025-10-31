@@ -78,26 +78,25 @@
             </div>
         </section>
 
-        {{-- KOLOM KANAN (LOGIN FORM) --}}
-        <section class="w-full max-w-md bg-white/95 dark:bg-[#161615] border border-gray-200 dark:border-[#3E3E3A] rounded-2xl shadow-lg backdrop-blur-md p-8">
-            <h2 class="text-3xl font-bold text-center mb-6 text-gray-900 dark:text-gray-100">🔑 Login</h2>
-
-            <form action="{{ route('dashboard.index') }}" method="GET" class="space-y-6">
-                {{-- Email --}}
-                <div>
-                    <label for="email" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-                    <input type="email" id="email" name="email"
-                        class="w-full px-3 py-2 border border-gray-300 dark:border-[#3E3E3A] rounded-md dark:bg-[#1b1b18] dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="nama@sekolah.sch.id" required>
-                </div>
-
-                {{-- Password --}}
-                <div>
-                    <label for="password" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
-                    <input type="password" id="password" name="password"
-                        class="w-full px-3 py-2 border border-gray-300 dark:border-[#3E3E3A] rounded-md dark:bg-[#1b1b18] dark:text-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="••••••••" required>
-                </div>
+                <div class="p-6 lg:p-8 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-xl rounded-lg border border-[#e3e3e0] dark:border-[#3E3E3A]">
+                    <h2 class="mb-6 font-medium text-lg text-center">Login Bimbingan Konseling</h2>
+                    
+                    {{-- PERBAIKAN: Menggunakan method="GET" dan action diarahkan ke Dashboard --}}
+                    <form action="{{ route('dashboard.index') }}" method="GET" class="space-y-6">
+                        
+                        {{-- Directive @csrf dihapus karena metode sekarang adalah GET --}}
+                        
+                        {{-- Input Email --}}
+                        <div>
+                            <label for="email" class="block mb-1 text-sm font-medium">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border dark:border-[#3E3E3A] border-[#e3e3e0] rounded-sm dark:bg-[#1b1b18] dark:text-[#EDEDEC] text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="nama@sekolah.sch.id" required autofocus>
+                        </div>
+                        
+                        {{-- Input Password --}}
+                        <div>
+                            <label for="password" class="block mb-1 text-sm font-medium">Password</label>
+                            <input type="password" id="password" name="password" class="w-full px-3 py-2 border dark:border-[#3E3E3A] border-[#e3e3e0] rounded-sm dark:bg-[#1b1b18] dark:text-[#EDEDEC] text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="••••••••" required>
+                        </div>
 
                 {{-- Remember Me + Forgot --}}
                 <div class="flex items-center justify-between">

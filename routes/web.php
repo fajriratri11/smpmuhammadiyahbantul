@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
+<<<<<<< HEAD
 // 1. ROUTE UTAMA / HALAMAN LOGIN
 Route::get('/', function () {
     return view('pages.auth.login'); 
@@ -91,9 +92,25 @@ Route::prefix('spp_page')->name('spp_page.')->group(function () {
     })->name('spp_notifikasi_tunggakan_wa'); 
     
 });
-
+ 
 
 // 3. KELOMPOK ROUTE MANAJEMEN PRESENSI
+=======
+// 1. LANDING PAGE (DEFAULT) - DIARAHKAN KE LOGIN (TETAP GET)
+// Rute ini harus GET agar bisa diakses browser secara normal.
+Route::get('/', function () {
+    return redirect()->route('auth.login');
+});
+
+// 2. ROUTE DASHBOARD (PAGES) - Rute yang seharusnya diakses setelah login
+// Rute Dashboard diubah menjadi MATCH(['GET', 'POST']) agar bisa menerima submit form Login (POST)
+Route::name('dashboard.index')->match(['GET', 'POST'], '/dashboard', function () {
+    return view('pages.attendance.recap'); 
+});
+
+
+// 3. KELOMPOK ROUTE MANAJEMEN PRESENSI (TETAP GET)
+>>>>>>> a86c43fca43fdf96bf3c32162e1c2282d73772b0
 Route::prefix('attendance')->name('attendance.')->group(function () {
     Route::get('/record', function () {
         return view('pages.attendance.record');
@@ -104,7 +121,11 @@ Route::prefix('attendance')->name('attendance.')->group(function () {
     })->name('recap'); 
 });
 
+<<<<<<< HEAD
 // 4. KELOMPOK ROUTE MANAJEMEN PELANGGARAN
+=======
+// 4. KELOMPOK ROUTE MANAJEMEN PELANGGARAN (TETAP GET)
+>>>>>>> a86c43fca43fdf96bf3c32162e1c2282d73772b0
 Route::prefix('violations')->name('violations.')->group(function () {
     Route::get('/record', function () {
         return view('pages.violations.record');
@@ -117,17 +138,44 @@ Route::prefix('violations')->name('violations.')->group(function () {
 
 // 5. KELOMPOK ROUTE OTENTIKASI
 Route::name('auth.')->group(function () {
-    // Halaman Login (GET)
+    // Tampilan Halaman Login (TETAP GET agar bisa dilihat)
     Route::get('/login', function () {
         return view('pages.auth.login');
     })->name('login');
 
-    // Halaman Lupa Password (GET)
+    // Proses Submit Login (BARU: POST)
+    Route::post('/login', function () {
+        // Karena ini simulasi, kita redirect ke Dashboard setelah POST
+        return redirect()->route('dashboard.index');
+    })->name('login.post'); // Diberi nama baru agar tidak konflik dengan auth.login (GET)
+
+    // Tampilan Halaman Lupa Password (TETAP GET)
     Route::get('/forgot-password', function () {
         return view('pages.auth.forgot-password');
     })->name('password.request');
+    
+    // Proses Submit Lupa Password (BARU: POST)
+    Route::post('/forgot-password', function () {
+        // Karena ini simulasi, kita redirect kembali ke halaman yang sama (simulasi kirim email)
+        return redirect()->route('auth.password.request')->with('status', 'Tautan reset sudah dikirim!');
+    })->name('password.email');
+    
+    // Tampilan Halaman Reset Password (TETAP GET)
+    Route::get('/reset-password', function () {
+        return view('pages.auth.reset-password');
+    })->name('password.reset');
 
+<<<<<<< HEAD
     // Route POST Logout Dummy
+=======
+    // Proses Submit Reset Password (BARU: POST)
+    Route::post('/reset-password', function () {
+        // Karena ini simulasi, kita redirect ke halaman Login setelah POST
+        return redirect()->route('auth.login')->with('status', 'Password berhasil diubah!');
+    })->name('password.update');
+
+    // Route Logout (BARU: POST)
+>>>>>>> a86c43fca43fdf96bf3c32162e1c2282d73772b0
     Route::post('/logout', function () {
         return redirect()->route('auth.login');
     })->name('logout');

@@ -51,6 +51,16 @@
                       <svg class="mx-auto mb-1 text-green-500 w-7 h-7 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                       <div class="text-sm font-medium text-gray-900 dark:text-white">Rekap Presensi</div>
                   </a>
+
+                  <a href="{{ route('auth.login') }}" class="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+    {{-- MENGGANTI IKON: Menggunakan ikon Logout/Door --}}
+    <svg class="mx-auto mb-1 text-red-500 w-7 h-7 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+    </svg>
+    {{-- Mengubah warna teks ikon menjadi merah agar sesuai dengan aksi Logout --}}
+    
+    <div class="text-sm font-medium text-gray-900 dark:text-white">Logout</div>
+</a>
               </div>
             </div>
             
