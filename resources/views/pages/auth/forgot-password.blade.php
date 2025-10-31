@@ -29,8 +29,8 @@
                     
                     {{-- FORMULIR KONFIRMASI EMAIL --}}
                     {{-- Menggunakan method="GET" untuk menghindari error POST/CSRF di frontend --}}
-                    <form action="{{ route('auth.password.request') }}" method="GET" class="space-y-6">
-                        
+                    <form action="{{ route('auth.password.request') }}" method="POST" class="space-y-6">
+                        @csrf
                         {{-- Input Email --}}
                         <div>
                             <label for="email" class="block mb-1 text-sm font-medium">Email</label>

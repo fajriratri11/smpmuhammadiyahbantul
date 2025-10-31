@@ -28,7 +28,7 @@
                     </p>
                     
                     {{-- FORMULIR GANTI PASSWORD --}}
-                    <form action="{{ route('auth.login') }}" method="GET" class="space-y-6">
+                    <form action="{{ route('auth.login') }}" method="POST" class="space-y-6">
                         
                         {{-- Input Password Baru --}}
                         <div>

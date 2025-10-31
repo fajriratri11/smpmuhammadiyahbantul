@@ -19,22 +19,21 @@
                 {{-- Logo/Header Aplikasi --}}
                 <div class="mb-6 flex items-center justify-center">
                     <h1 class="text-2xl font-semibold dark:text-[#EDEDEC]">
-                        SMP MUHAMMADIYAH BANTUL
+                        Masuk ke Aplikasi
                     </h1>
                 </div>
 
                 <div class="p-6 lg:p-8 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-xl rounded-lg border border-[#e3e3e0] dark:border-[#3E3E3A]">
-                    <h2 class="mb-6 font-medium text-lg text-center">Login</h2>
+                    <h2 class="mb-6 font-medium text-lg text-center">Login Bimbingan Konseling</h2>
                     
-                    {{-- PERBAIKAN: Menggunakan method="GET" dan action diarahkan ke Dashboard --}}
-                    <form action="{{ route('dashboard.index') }}" method="GET" class="space-y-6">
+                    {{-- Form Login --}}
+                    <form action="{{ route('auth.login.post') }}" method="POST" class="space-y-6">
+                        @csrf
                         
-                        {{-- Directive @csrf dihapus karena metode sekarang adalah GET --}}
-                        
-                        {{-- Input Email --}}
+                        {{-- PERUBAHAN: Input Username/NIS/NIM --}}
                         <div>
-                            <label for="email" class="block mb-1 text-sm font-medium">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-3 py-2 border dark:border-[#3E3E3A] border-[#e3e3e0] rounded-sm dark:bg-[#1b1b18] dark:text-[#EDEDEC] text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="nama@sekolah.sch.id" required autofocus>
+                            <label for="username" class="block mb-1 text-sm font-medium">Username / NIS</label>
+                            <input type="text" id="username" name="username" class="w-full px-3 py-2 border dark:border-[#3E3E3A] border-[#e3e3e0] rounded-sm dark:bg-[#1b1b18] dark:text-[#EDEDEC] text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" placeholder="Masukkan NIS Anda" required autofocus>
                         </div>
                         
                         {{-- Input Password --}}
