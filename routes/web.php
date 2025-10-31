@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-<<<<<<< HEAD
 // 1. ROUTE UTAMA / HALAMAN LOGIN
 Route::get('/', function () {
     return view('pages.auth.login'); 
@@ -95,7 +94,6 @@ Route::prefix('spp_page')->name('spp_page.')->group(function () {
  
 
 // 3. KELOMPOK ROUTE MANAJEMEN PRESENSI
-=======
 // 1. LANDING PAGE (DEFAULT) - DIARAHKAN KE LOGIN (TETAP GET)
 // Rute ini harus GET agar bisa diakses browser secara normal.
 Route::get('/', function () {
@@ -110,7 +108,6 @@ Route::name('dashboard.index')->match(['GET', 'POST'], '/dashboard', function ()
 
 
 // 3. KELOMPOK ROUTE MANAJEMEN PRESENSI (TETAP GET)
->>>>>>> a86c43fca43fdf96bf3c32162e1c2282d73772b0
 Route::prefix('attendance')->name('attendance.')->group(function () {
     Route::get('/record', function () {
         return view('pages.attendance.record');
@@ -121,11 +118,8 @@ Route::prefix('attendance')->name('attendance.')->group(function () {
     })->name('recap'); 
 });
 
-<<<<<<< HEAD
 // 4. KELOMPOK ROUTE MANAJEMEN PELANGGARAN
-=======
 // 4. KELOMPOK ROUTE MANAJEMEN PELANGGARAN (TETAP GET)
->>>>>>> a86c43fca43fdf96bf3c32162e1c2282d73772b0
 Route::prefix('violations')->name('violations.')->group(function () {
     Route::get('/record', function () {
         return view('pages.violations.record');
@@ -165,9 +159,7 @@ Route::name('auth.')->group(function () {
         return view('pages.auth.reset-password');
     })->name('password.reset');
 
-<<<<<<< HEAD
     // Route POST Logout Dummy
-=======
     // Proses Submit Reset Password (BARU: POST)
     Route::post('/reset-password', function () {
         // Karena ini simulasi, kita redirect ke halaman Login setelah POST
@@ -175,7 +167,6 @@ Route::name('auth.')->group(function () {
     })->name('password.update');
 
     // Route Logout (BARU: POST)
->>>>>>> a86c43fca43fdf96bf3c32162e1c2282d73772b0
     Route::post('/logout', function () {
         return redirect()->route('auth.login');
     })->name('logout');
