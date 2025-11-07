@@ -32,6 +32,11 @@
                     {{-- Tombol (Warna sudah oke, karena biasanya menggunakan warna solid) --}}
                     <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 text-sm">Tampilkan Data</button>
                     <button type="button" class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 text-sm dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-500">Cetak Rekap</button>
+                    <label for="fileInput" class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 text-sm cursor-pointer dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-500">
+  Import File
+</label>
+
+<input type="file" id="fileInput" class="hidden">
                 </form>
             </div>
 
