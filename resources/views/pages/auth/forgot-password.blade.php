@@ -45,7 +45,7 @@
 
                     {{-- Tautan Kembali ke Login --}}
                     <div class="mt-4 text-center">
-                        <a href="{{ route('auth.login') }}" class="text-sm font-medium text-[#f53003] dark:text-[#FF4433] hover:underline">
+                        <a href="{{ route('login') }}" class="text-sm font-medium text-[#f53003] dark:text-[#FF4433] hover:underline">
                             Kembali ke Halaman Login
                         </a>
                     </div>
