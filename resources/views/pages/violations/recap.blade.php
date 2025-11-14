@@ -28,6 +28,8 @@
                     <input type="date" class="rounded-md border-gray-300 shadow-sm sm:text-sm p-2 w-full md:w-auto dark:bg-gray-800 dark:border-gray-600 dark:text-white">
                     <button type="submit" class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 text-sm">Terapkan Filter</button>
                     <button type="button" class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 text-sm dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-600">Reset</button>
+                    <button type="button" class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 text-sm dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-500">Cetak Rekap</button>
+               
                 </form>
             </div>
 
@@ -36,11 +38,20 @@
                     <p class="text-sm font-medium text-indigo-600 dark:text-indigo-400">Total Pelanggaran</p>
                     <p class="text-3xl font-bold text-gray-900 dark:text-white">125</p>
                 </div>
+                {{-- **BAGIAN BARU: Jumlah Pelanggaran Berat** --}}
+                <div class="bg-red-50 p-5 rounded-lg shadow-md dark:bg-gray-800">
+                    <p class="text-sm font-medium text-red-600 dark:text-red-400">Jumlah Pelanggaran Berat</p>
+                    {{-- Ganti dengan variabel yang sesuai (misalnya: $pelanggaranBeratCount) --}}
+                    <p class="text-3xl font-bold text-gray-900 dark:text-white">8</p> 
+                </div>
+                {{-- **AKHIR BAGIAN BARU** --}}
                 <div class="bg-green-50 p-5 rounded-lg shadow-md dark:bg-gray-800">
                     <p class="text-sm font-medium text-green-600 dark:text-green-400">Siswa Tanpa Pelanggaran</p>
                     <p class="text-3xl font-bold text-gray-900 dark:text-white">85%</p>
                 </div>
             </div>
+
+            ---
 
             <h2 class="text-xl font-semibold text-gray-900 mb-4 dark:text-white">Riwayat Detail Pelanggaran</h2>
             <div class="overflow-x-auto shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">

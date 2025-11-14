@@ -10,6 +10,10 @@
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
+<<<<<<< HEAD
+=======
+        "maatwebsite/excel": "^3.1",
+>>>>>>> c37ce7bca8e52c2cb3b406581ff53be3f2da9394
         "nesbot/carbon": "^2.73",
         "yaza/laravel-repository-service": "4.0"
     },

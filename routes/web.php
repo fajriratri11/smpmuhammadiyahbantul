@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\SiswaController;
 
 // =========================================================================
 // 1. AUTHENTICATION & ROOT
@@ -33,6 +34,8 @@ Route::prefix('bk')->middleware(['auth', 'role.bk'])->group(function () {
     Route::get('/presensi/record', [PresensiController::class, 'record'])->name('presensi.record');
     Route::post('/presensi/store', [PresensiController::class, 'store'])->name('presensi.store');
     Route::get('/presensi/recap', [PresensiController::class, 'recap'])->name('presensi.recap');
+    Route::post('/siswas/import', [SiswaController::class, 'import'])->name('siswas.import');
+
 });
 
 // 🔹 SPP
@@ -56,3 +59,55 @@ Route::prefix('violations')->name('violations.')->group(function () {
     Route::get('/record', fn() => view('pages.violations.record'))->name('record');
     Route::get('/recap', fn() => view('pages.violations.recap'))->name('recap');
 });
+
+
+
+
+// =========================================================================
+// 3. SPP (SUMBANGAN PEMBINAAN PENDIDIKAN) MANAGEMENT
+// All 'spp_page' routes consolidated into a single group.
+// =========================================================================
+Route::prefix('spp_page')->name('spp_page.')->group(function () {
+    Route::get('/spp_dashboard', function () {
+        return view('pages.spp_page.spp_dashboard');
+    })->name('spp_dashboard');
+
+    Route::get('/spp_pembayaranspp', function () {
+        return view('pages.spp_page.spp_pembayaranspp');
+    })->name('spp_pembayaranspp');
+
+    Route::get('/spp_datasiswa', function () {
+        return view('pages.spp_page.spp_datasiswa');
+    })->name('spp_datasiswa');
+
+    Route::get('/spp_tahunajaran', function () {
+        return view('pages.spp_page.spp_tahunajaran');
+    })->name('spp_tahunajaran');
+
+    Route::get('/spp_kelas', function () {
+        return view('pages.spp_page.spp_kelas');
+    })->name('spp_kelas');
+
+    Route::get('/spp_kenaikankelas', function () {
+        return view('pages.spp_page.spp_kenaikankelas');
+    })->name('spp_kenaikankelas');
+
+    Route::get('/spp_kelulusansiswa', function () {
+        return view('pages.spp_page.spp_kelulusansiswa');
+    })->name('spp_kelulusansiswa');
+
+    Route::get('/spp_detail_kelas_spp', function () {
+        return view('pages.spp_page.spp_detail_kelas_spp');
+    })->name('spp_detail_kelas_spp');
+
+    Route::get('/spp_detail_pembayaran_siswa', function () {
+        return view('pages.spp_page.spp_detail_pembayaran_siswa');
+    })->name('spp_detail_pembayaran_siswa');
+
+    Route::get('/spp_notifikasi_tunggakan_wa', function () {
+        return view('pages.spp_page.spp_notifikasi_tunggakan_wa');
+    })->name('spp_notifikasi_tunggakan_wa');
+});
+
+
+
