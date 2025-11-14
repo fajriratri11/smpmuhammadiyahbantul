@@ -1,4 +1,5 @@
 <?php
+// database/migrations/2014_10_12_000000_create_users_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,11 +14,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nisn');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            // --- KOLOM KUSTOM ANDA ---
+            $table->string('nis')->unique(); // Kolom NIS, unik
+
+            // Kolom Role sebagai PILIHAN (ENUM), bukan teks bebas
+            // Sesuaikan isi array ['admin', 'guru', 'siswa'] dengan kebutuhan Anda
+            $table->enum('role', ['bk', 'siswa', 'spp'])->default('siswa');
+            
+            // --- KOLOM DEFAULT LARAVEL (Dimodifikasi) ---
+            $table->string('email')->nullable(); // Email opsional
             $table->string('password');
-            $table->enum('role',['admin'], ['siswa'])->default('admin');
+            
             $table->rememberToken();
             $table->timestamps();
         });
